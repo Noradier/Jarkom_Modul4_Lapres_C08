@@ -65,6 +65,26 @@ IP Untuk Server:
 | Mojokerto | 2 | /30 | 255.255.255.252 | NID DMZ |
 | Malang | 2 | /30 | 255.255.255.252 | NID DMZ + 4 |
 
+### Konfigurasi Interface
+
+Agar jaringan yang telah dibuat pada Cisco Packet Tracer dapat terhubung, dilakukan konfigurasi interface untuk masing - masing hardware sebagai berikut sebagai contoh:
+
+**Konfigurasi interface antar hardware (Router - Router)**
+Konfigurasi interface akan dilakukan untuk Subnet A2.
+
+Langkah 1: Pilih router SURABAYA dan pilih tab **Config**  -> **Interface** dan pilih interface SURABAYA yang mengarah kepada router PASURUAN
+Langkah 2: Masukkan **IPV4 Address** berupa NID Subnet + 1 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
+
+![Gambar VLSM_3](VLSM_3.png)
+
+Langkah 3: Pilih router PASURUAN dan pilih tab **Config**  -> **Interface** dan pilih interface PASURUAN yang mengarah kepada router SURABAYA
+Langkah 4: Masukkan **IPV4 Address** berupa NID Subnet + 2 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
+
+![Gambar VLSM_4](VLSM_4.png)
+
+**Konfigurasi interface antar hardware (Router - Client / Server)**
+Konfigurasi interface akan dilakukan untuk Subnet A3.
+
 ### Routing
 
 Agar semua subnet dapat saling terhubung, tambahkan static routing berikut:

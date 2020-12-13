@@ -7,6 +7,7 @@
 - Berikan memori sebesar 64MB pada setiap UML.
 - Pembagian IP dan routing harus SE-EFISIEN MUNGKIN.
 - Pastikan semua UML dapat melakukan ping ke its.ac.id
+- Hasil perhitungan untuk VLSM / CIDR, berbeda dengan di CPT / UML
 
 ## VLSM / CPT
 

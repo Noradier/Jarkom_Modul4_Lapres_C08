@@ -73,13 +73,13 @@ Agar jaringan yang telah dibuat pada Cisco Packet Tracer dapat terhubung, dilaku
 
 Konfigurasi interface akan dilakukan untuk Subnet A2.
 
-Langkah 1: Pilih router SURABAYA dan pilih tab **Config**  -> **Interface** dan pilih interface SURABAYA yang mengarah kepada router PASURUAN
-Langkah 2: Masukkan **IPV4 Address** berupa NID Subnet + 1 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
+##### Langkah 1 - Pilih router SURABAYA dan pilih tab **Config**  -> **Interface** dan pilih interface SURABAYA yang mengarah kepada router PASURUAN
+##### Langkah 2 - Masukkan **IPV4 Address** berupa NID Subnet + 1 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
 
 ![Gambar VLSM_3](VLSM_3.png)
 
-Langkah 3: Pilih router PASURUAN dan pilih tab **Config**  -> **Interface** dan pilih interface PASURUAN yang mengarah kepada router SURABAYA
-Langkah 4: Masukkan **IPV4 Address** berupa NID Subnet + 2 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
+##### Langkah 3 - Pilih router PASURUAN dan pilih tab **Config**  -> **Interface** dan pilih interface PASURUAN yang mengarah kepada router SURABAYA
+##### Langkah 4 - Masukkan **IPV4 Address** berupa NID Subnet + 2 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
 
 ![Gambar VLSM_4](VLSM_4.png)
 
@@ -87,19 +87,39 @@ Langkah 4: Masukkan **IPV4 Address** berupa NID Subnet + 2 dan Subnet Mask sesua
 
 Konfigurasi interface akan dilakukan untuk Subnet A3.
 
-Langkah 1: Pilih router PASURUAN dan pilih tab **Config**  -> **Interface** dan pilih interface PASURUAN yang mengarah kepada client SIDOARJO
-Langkah 2: Masukkan **IPV4 Address** berupa NID Subnet + 1 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
+##### Langkah 1 - Pilih router PASURUAN dan pilih tab **Config**  -> **Interface** dan pilih interface PASURUAN yang mengarah kepada client SIDOARJO
+##### Langkah 2 - Masukkan **IPV4 Address** berupa NID Subnet + 1 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
 
 ![Gambar VLSM_5](VLSM_5.png)
 
-Langkah 3: Pilih client SIDOARJO dan pilih tab **Config**  -> **Desktop**
-Langkah 4: Masukkan **IPV4 Address** berupa NID Subnet + 2, Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya, dan Default Gateway berupa NID Subnet + 1
+##### Langkah 3 - Pilih client SIDOARJO dan pilih tab **Config**  -> **Desktop**
+##### Langkah 4 - Masukkan **IPV4 Address** berupa NID Subnet + 2, Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya, dan Default Gateway berupa NID Subnet + 1
 
 ![Gambar VLSM_6](VLSM_6.png)
 
 ### Routing
 
-Agar semua subnet dapat saling terhubung, tambahkan static routing berikut:
+Untuk melakukan routing, akan diberikan langkah - langkah yang diperlukan agar route yang telah dibuat dapat diterapkan pada topologi.
+
+**Routing untuk Subnet**
+
+Sebagai contoh, akan dilakukan routing untuk subnet A3 pada router SURABAYA.
+
+##### Langkah 1 - Pilih router SURABAYA dan pilih tab **Config** -> **Routing** ->  **Static**
+##### Langkah 2 - Masukkan Network berupa NID Subnet, Mask sesuai dengan Submask yang telah ditentukan pada tabel, dan Next Hop berupa IP Interface router subnet yang mengarah ke SURABAYA. pada Subnet ini, router tersebut adalah PASURUAN
+
+![Gambar VLSM_7](VLSM_7.png)
+
+**Default Routing**
+
+Default routing dilakukan untuk router - router yang tidak langsung tersambung ke cloud. Sebagai contoh, PASURUAN.
+
+##### Langkah 1 - Pilih router PASURUAN dan pilih tab **Config** -> **Routing** ->  **Static**
+##### Langkah 2 - Masukkan Network berupa 0.0.0.0, Mask berupa 0.0.0.0, dan Next Hop berupa IP Interface router sebelum PASURUAN yang mengarah ke router itu sendiri. pada default routing untuk router PASURUAN, router tersebut adalah SURABAYA
+
+![Gambar VLSM_8](VLSM_8.png)
+
+Tabel routing seluruh Subnet untuk topologi:
 
 **SURABAYA**
 ```

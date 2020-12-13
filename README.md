@@ -13,6 +13,24 @@
 
 ### Hasil Perhitungan
 
+##### Langkah 1 - Tentukan jumlah alamat IP yang dibutuhkan oleh tiap subnet dan lakukan labelling netmask berdasarkan jumlah IP yang dibutuhkan.
+| Subnet| Jumlah IP | Submask |
+| ------------- |:-------------:| -----:|
+| A2 | 2 | /30 |
+| A4 | 2 | /30 |
+| A9 | 2 | /30 |
+| A11 | 2 | /30 |
+| A7 | 13 | /28 |
+| A6 | 101 | /25 |
+| A13 | 251 | /24 |
+| A8 | 502 | /23 |
+| A1 | 1001 | /22 |
+| A3 | 701 | /22 |
+| A10 | 521 | /22 |
+| A12 | 721 | /22 |
+| A5 | 2021 | /21 |
+| Total | 5840 | /19 |
+
 ### Pohon Pembagian IP
 
 ### Routing

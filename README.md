@@ -39,11 +39,37 @@
 
 ![Gambar VLSM_2](VLSM_2.png)
 
+Melalui pohon diatas, maka diperoleh tabel IP akhir sebagai berikut:
+
+| Subnet | Jumlah IP | Submask | Netmask | NID |
+| ------------- |:-------------:| -----:| -----: | -----: |
+| A2 | 2 | /30 | 255.255.255.252 | 192.168.0.0 |
+| A4 | 2 | /30 | 255.255.255.252 | 192.168.0.4 |
+| A9 | 2 | /30 | 255.255.255.252 | 192.168.0.8 |
+| A11 | 2 | /30 | 255.255.255.252 | 192.168.0.12 |
+| A7 | 13 | /28 | 255.255.255.240 | 192.168.0.16 |
+| A6 | 101 | /25 | 255.255.255.128 | 192.168.0.128 |
+| A13 | 251 | /24 | 255.255.255.0 | 192.168.1.0 |
+| A8 | 502 | /23 | 255.255.254.0 | 192.168.2.0 |
+| A1 | 1001 | /22 | 255.255.252.0 | 192.168.4.0 |
+| A3 | 701 | /22 | 255.255.252.0 | 192.168.8.0 |
+| A10 | 521 | /22 | 255.255.252.0 | 192.168.12.0 |
+| A12 | 721 | /22 | 255.255.252.0 | 192.168.16.0 |
+| A5 | 2021 | /21 | 255.255.248.0 | 192.168.24.0 |
+| **Total** | **5840** | **/19** |
+
+IP Untuk Server:
+
+| Subnet | Jumlah IP | Submask | Netmask | NID |
+| ------------- |:-------------:| -----:| -----: | -----: |
+| Mojokerto | 2 | /30 | 255.255.255.252 | NID DMZ |
+| Malang | 2 | /30 | 255.255.255.252 | NID DMZ + 4 |
+
 ### Routing
 
 Agar semua subnet dapat saling terhubung, tambahkan static routing berikut:
 
-**Surabaya**
+**SURABAYA**
 ```
 Network 192.168.8.0 Netmask 255.255.252.0 Next Hop 192.168.0.2 (A3/22)
 Network 192.168.0.128 Netmask 255.255.255.128 Next Hop 192.168.0.2 (A6/25)
@@ -58,19 +84,19 @@ Network 192.168.16.0 Netmask 255.255.252.0 Next Hop 192.168.0.10 (A12/22)
 Network 10.151.77.76 Netmask 255.255.255.252 Next Hop 192.168.0.10 (Server Malang)
 ```
 
-**Pasuruan**
+**PASURUAN**
 ```
 Network 0.0.0.0 Netmask 0.0.0.0 Next Hop 192.168.0.1 (Default)
 Network 192.168.0.128 Netmask 255.255.255.128 Next Hop 192.168.0.6 (A6/25)
 Network 192.168.24.0 Netmask 255.255.248.0 Next Hop 192.168.0.6 (A5/21)
 ```
 
-**Probolinggo**
+**PROBOLINGGO**
 ```
 Network 0.0.0.0 Netmask 0.0.0.0 Next Hop 192.168.0.5 (default)
 ```
 
-**Batu**
+**BATU**
 ```
 Network 0.0.0.0 Netmask 0.0.0.0 Next Hop 192.168.0.9 (default)
 Network 192.168.0.16 Netmask 255.255.255.240 Next Hop 192.168.2.3 (A7/28)

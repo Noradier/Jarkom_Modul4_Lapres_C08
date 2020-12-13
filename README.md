@@ -70,6 +70,7 @@ IP Untuk Server:
 Agar jaringan yang telah dibuat pada Cisco Packet Tracer dapat terhubung, dilakukan konfigurasi interface untuk masing - masing hardware sebagai berikut sebagai contoh:
 
 **Konfigurasi interface antar hardware (Router - Router)**
+
 Konfigurasi interface akan dilakukan untuk Subnet A2.
 
 Langkah 1: Pilih router SURABAYA dan pilih tab **Config**  -> **Interface** dan pilih interface SURABAYA yang mengarah kepada router PASURUAN
@@ -83,7 +84,18 @@ Langkah 4: Masukkan **IPV4 Address** berupa NID Subnet + 2 dan Subnet Mask sesua
 ![Gambar VLSM_4](VLSM_4.png)
 
 **Konfigurasi interface antar hardware (Router - Client / Server)**
+
 Konfigurasi interface akan dilakukan untuk Subnet A3.
+
+Langkah 1: Pilih router PASURUAN dan pilih tab **Config**  -> **Interface** dan pilih interface PASURUAN yang mengarah kepada client SIDOARJO
+Langkah 2: Masukkan **IPV4 Address** berupa NID Subnet + 1 dan Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya
+
+![Gambar VLSM_5](VLSM_5.png)
+
+Langkah 3: Pilih client SIDOARJO dan pilih tab **Config**  -> **Desktop**
+Langkah 4: Masukkan **IPV4 Address** berupa NID Subnet + 2, Subnet Mask sesuai dengan tabel subnet yang telah dibuat sebelumnya, dan Default Gateway berupa NID Subnet + 1
+
+![Gambar VLSM_6](VLSM_6.png)
 
 ### Routing
 
